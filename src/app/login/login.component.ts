@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
 
       constructor(
           private _service:UserService, private _router:Router) {
-            //this.logoPath = 'assets/images/Logo.png';
+         
           }
 
       logon() {
