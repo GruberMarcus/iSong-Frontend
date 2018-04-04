@@ -12,6 +12,7 @@ import { FileService } from './services/file.service';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MysongsComponent } from './dashboard/mysongs.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.modules';
@@ -22,7 +23,8 @@ import { AppRoutingModule } from './app-routing.modules';
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    MysongsComponent
+    MysongsComponent,
+    FileUploadComponent
   ],
   imports: [
     BrowserModule,
