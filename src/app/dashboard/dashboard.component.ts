@@ -12,13 +12,14 @@ import { DashboardService } from '../services/dashboard.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-/*
+
     currentPage: number;
     start: number;
     end: number;
     getData:any;
+    renderedSongs:any;
 
-    constructor(private todoService:TodoService,private songService:SongService){
+    constructor(private Dashboardservice:DashboardService){
         this.currentPage = 1;
 
         this.start = 0;
@@ -27,10 +28,10 @@ export class DashboardComponent implements OnInit {
         //this.renderedTodos = todoService.getOffers();
         //console.log(this.renderedTodos.length);
     }
-*/
+
 	ngOnInit() {
          }
-/*
+
     switchPage(direction: number){
         if(direction > 0) this.currentPage = this.currentPage - 1;
         else this.currentPage = this.currentPage + 1;
@@ -38,26 +39,26 @@ export class DashboardComponent implements OnInit {
         this.start = (this.currentPage - 1) * 4;
         this.end = this.currentPage * 4;
 
-        this.renderedTodos = this.todoService.getOffers(this.start, this.end);
-        if (this.end > this.renderMaxNumberOfTodos()) {
-            this.end = this.renderMaxNumberOfTodos();
+        this.renderedSongs = this.Dashboardservice.getSongs(this.start, this.end);
+        if (this.end > this.renderMaxNumberOfSongs()) {
+            this.end = this.renderMaxNumberOfSongs();
         }
     }
     startReached():boolean{
         return this.currentPage == 1;
     }
     endReached():boolean{
-        return this.currentPage >= (this.todoService.getMaxNumberOfTodos() / 4);
+        return this.currentPage >= (this.Dashboardservice.getMaxNumberOfSongs() / 4);
     }
     nextPage(){
-        if(this.currentPage < (this.todoService.getMaxNumberOfTodos() / 4)) this.switchPage(-1);
+        if(this.currentPage < (this.Dashboardservice.getMaxNumberOfSongs() / 4)) this.switchPage(-1);
     }
-    renderMaxNumberOfTodos(){
-        return this.todoService.getMaxNumberOfTodos();
+    renderMaxNumberOfSongs(){
+        return this.Dashboardservice.getMaxNumberOfSongs();
     }
     previousPage(){
         if(this.currentPage > 1) this.switchPage(1);
     }
 }
-*/
+
 }
