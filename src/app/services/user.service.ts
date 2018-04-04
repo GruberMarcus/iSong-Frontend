@@ -25,7 +25,7 @@ export class UserService {
   // wird er auf die Login-Seite zurückgeleitet. getToken() wird in jeder Service-
   // Methode verwendet, um den korrekten HTTP-Pfad zu erhalten.
   getToken() {
-    if (localStorage.getItem("name") === null){
+    if (localStorage.getItem("email") === null){
       this._router.navigate(['login']);
     }
     return localStorage.getItem('token');
@@ -37,7 +37,7 @@ export class UserService {
   // den Benutzer einzuloggen.
   logon(user:any): Promise<any> {
     return this.http
-     .post(this.API_URL, {name: user.name, password: user.password})
+     .post(this.API_URL, {email: user.email, password: user.password})
      .toPromise()
      .catch(this.handleError);
   }

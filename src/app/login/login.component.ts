@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
       logon() {
         let response = this._service.logon(this.user)
         .then ( resp => {
-          localStorage.setItem("name", this.user.name);
+          localStorage.setItem("email", this.user.email);
           localStorage.setItem("token", JSON.parse(resp._body)["token"]);
           this._router.navigate(['dashboard']);
         });
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     document.body.classList.add('bg-img');
 
     // Leitet zum Dashboard weiter, wenn der localStorage nicht leer ist.
-    if (localStorage.getItem("name") != null){
+    if (localStorage.getItem("email") != null){
         this._router.navigate(['dashboard']);
     }
   }

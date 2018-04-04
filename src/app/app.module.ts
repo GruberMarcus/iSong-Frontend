@@ -9,7 +9,8 @@ import { UserService } from './services/user.service';
 import { DashboardService } from './services/dashboard.service'
 
 import { LoginComponent } from './login/login.component';
-
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MysongsComponent } from './dashboard/mysongs.component';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.modules';
@@ -27,6 +28,7 @@ import { AppRoutingModule } from './app-routing.modules';
     HttpModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
 
   ],
   providers: [
