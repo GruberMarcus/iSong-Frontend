@@ -31,13 +31,13 @@ export class UserService {
     return localStorage.getItem('token');
   }
 
- 
+
 
   // Führt eine POST-Methode aus in localhost:8000/api, um
   // den Benutzer einzuloggen.
   logon(user:any): Promise<any> {
     return this.http
-     .post(this.API_URL, {email: user.email, password: user.password})
+     .post(this.API_URL + 'login', {email: user.email, password: user.password})
      .toPromise()
      .catch(this.handleError);
   }
