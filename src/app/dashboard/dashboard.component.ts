@@ -10,7 +10,7 @@ import { DashboardService } from '../services/dashboard.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+/*
     currentPage: number;
     start: number;
     end: number;
@@ -25,14 +25,10 @@ export class DashboardComponent implements OnInit {
         //this.renderedTodos = todoService.getOffers();
         //console.log(this.renderedTodos.length);
     }
-
+*/
 	ngOnInit() {
-        ngOnInit(){
-            console.log(localStorage);
-            this.getSongs();
-        }
-    }
-
+         }
+/*
     switchPage(direction: number){
         if(direction > 0) this.currentPage = this.currentPage - 1;
         else this.currentPage = this.currentPage + 1;
@@ -61,4 +57,5 @@ export class DashboardComponent implements OnInit {
         if(this.currentPage > 1) this.switchPage(1);
     }
 }
+*/
 }

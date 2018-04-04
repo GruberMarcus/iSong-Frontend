@@ -6,7 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { UserService } from './services/user.service';
-import { DashboardService } from './services/dashboard.service'
+import { DashboardService } from './services/dashboard.service';
+import { FileService } from './services/file.service';
 
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -33,7 +34,8 @@ import { AppRoutingModule } from './app-routing.modules';
   ],
   providers: [
   	UserService,
-  	DashboardService
+  	DashboardService,
+  	FileService
 
   ], 
    bootstrap: [AppComponent]
