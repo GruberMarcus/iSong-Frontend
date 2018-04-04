@@ -10,8 +10,15 @@ import { Router } from '@angular/router';
 @Injectable()
 export class DashboardService {
   API_URL = "http://localhost:8000/api/";
+  offers = [];
 
   constructor(
     private _router:Router, private http:Http) {
+    }
+    getOffers(start,end) {
+        return this.offers.slice(start,end);
+    }
+    public getMaxNumberOfTodos(): number{
+        return this.offers.length;
     }
    }
