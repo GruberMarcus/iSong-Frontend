@@ -1,5 +1,5 @@
-export class song{
-    title: String;
+export class Song{
+    title: string;
     length: number;
-    artist: String;
+    artist: string;
 }
