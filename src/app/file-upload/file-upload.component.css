@@ -1,0 +1,11 @@
+#upload {
+    display: none;
+}
+
+label {
+    cursor: pointer;
+}
+
+#preview {
+    height: 80px;
+}
