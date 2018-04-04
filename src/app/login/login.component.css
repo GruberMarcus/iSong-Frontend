@@ -8,18 +8,18 @@
 }
 
 #box-content {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
 }
 
-.buttonblue {
-	background-color: #0000ff;
+h3{
+    text-align: center;
 }
 
-.buttondarkgr {
-	background-color: #666666;
+button{
+    margin-left: 160px;
 }
 
 .header {
@@ -48,8 +48,6 @@
 #name, #password {
   font-size: 1.4em;
 }
-
-
 
 .content {
   position: fixed;
