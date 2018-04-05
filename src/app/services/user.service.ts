@@ -21,11 +21,11 @@ export class UserService {
     this._router.navigate(['login']);
   }
 
-  // Sollte der Eintrag "name" leer sein (also wenn das LocalStorage leer ist),
+  // Sollte der Eintrag "token" leer sein (also wenn das LocalStorage leer ist),
   // wird er auf die Login-Seite zurückgeleitet. getToken() wird in jeder Service-
-  // Methode verwendet, um den korrekten HTTP-Pfad zu erhalten.
+  // Methode verwendet, um den aktiven Token für Auth zu erhalten.
   getToken() {
-    if (localStorage.getItem("email") === null){
+    if (localStorage.getItem("token") === null){
       this._router.navigate(['login']);
     }
     return localStorage.getItem('token');
@@ -33,7 +33,7 @@ export class UserService {
 
 
 
-  // Führt eine POST-Methode aus in localhost:8000/api, um
+  // Führt eine POST-Methode in localhost:8000/api aus, um
   // den Benutzer einzuloggen.
   logon(user:any): Promise<any> {
     return this.http

@@ -27,20 +27,24 @@ export class DashboardService {
      .catch(this.handleError.bind(this));
   }
 
-    getSongs(start,end) {
-        return this.songs.slice(start,end);
-    }
-    public getMaxNumberOfSongs(): number{
-        return this.songs.length;
-    }
-    getSongsDetail():Promise<any> {
+    getSongsDetail(id):Promise<any> {
     const token = this.Userservice.getToken();
     return this.http
-     .get(this.API_URL + 'songs?token=' + token)
+     .get(this.API_URL + 'songs/' + id + '?token=' + token)
      .toPromise()
      .then()
      .catch(this.handleError.bind(this));
   }
+
+  editSong(id, Song):Promise<any> {
+  const token = this.Userservice.getToken();
+  return this.http
+   .put(this.API_URL + 'songs/' + id + '?token=' + token, {title: Song.title, length: Song.length, author: Song.author})
+   .toPromise()
+   .then()
+   .catch(this.handleError.bind(this));
+}
+
    private handleError(error:any): Promise<any>{
     if (error.status === 401) {
      console.log("Token abgelaufen!");
@@ -52,5 +56,5 @@ export class DashboardService {
     return Promise.reject(error.message || error);
   }
 
-    
+
    }

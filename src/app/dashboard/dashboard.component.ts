@@ -13,52 +13,17 @@ import { DashboardService } from '../services/dashboard.service';
 })
 export class DashboardComponent implements OnInit {
 
-    currentPage: number;
-    start: number;
-    end: number;
     getData:any;
     renderedSongs:any;
 
-    constructor(private Dashboardservice:DashboardService){
-        this.currentPage = 1;
-
-        this.start = 0;
-        this.end = 4;
-
-        //this.renderedTodos = todoService.getOffers();
-        //console.log(this.renderedTodos.length);
+    constructor(private ds:DashboardService, private _router: Router){
     }
 
 	ngOnInit() {
-         }
-
-    switchPage(direction: number){
-        if(direction > 0) this.currentPage = this.currentPage - 1;
-        else this.currentPage = this.currentPage + 1;
-
-        this.start = (this.currentPage - 1) * 4;
-        this.end = this.currentPage * 4;
-
-        this.renderedSongs = this.Dashboardservice.getSongs(this.start, this.end);
-        if (this.end > this.renderMaxNumberOfSongs()) {
-            this.end = this.renderMaxNumberOfSongs();
-        }
+    //Leitet zum login zurück, wenn token nicht gespeichert...
+    if (localStorage.getItem("token") == null){
+        this._router.navigate(['login']);
     }
-    startReached():boolean{
-        return this.currentPage == 1;
-    }
-    endReached():boolean{
-        return this.currentPage >= (this.Dashboardservice.getMaxNumberOfSongs() / 4);
-    }
-    nextPage(){
-        if(this.currentPage < (this.Dashboardservice.getMaxNumberOfSongs() / 4)) this.switchPage(-1);
-    }
-    renderMaxNumberOfSongs(){
-        return this.Dashboardservice.getMaxNumberOfSongs();
-    }
-    previousPage(){
-        if(this.currentPage > 1) this.switchPage(1);
-    }
-}
+  }
 
 }

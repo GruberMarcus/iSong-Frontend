@@ -11,8 +11,14 @@ import { DashboardService } from '../services/dashboard.service';
 })
 export class MysongsComponent implements OnInit {
 
+  constructor(private ds: DashboardService, private _router: Router){
+
+  }
+
 	ngOnInit() {
- 
+    if (localStorage.getItem("token") == null){
+        this._router.navigate(['login']);
+    }
     }
 
 }

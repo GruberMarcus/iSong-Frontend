@@ -1,6 +1,18 @@
 <input (change)="upload($event)" type="file" id="upload" name="newFile" value="">
 <label for="upload">
-    <i class="glyphicon glyphicon-plus"></i>&nbsp; Anhang hinzufügen
+    <i class="glyphicon glyphicon-plus"></i>&nbsp; Musik hinzufügen
 </label>
 
-<img id="preview" [src]="image">
+<label for="title">
+<input type="text" id="title" name="fileTitle" value="">
+</label>
+
+<label for="author">
+<input type="text" id="author" name="fileAuthor" value="">
+</label>
+
+<label for="length">
+<input type="text" id="length" name="fileLength" value="">
+</label>
+
+<img id="preview" [src]="file">

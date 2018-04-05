@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
 
       constructor(
           private _service:UserService, private _router:Router) {
-         
+
           }
 
       logon() {
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     document.body.classList.add('bg-img');
 
     // Leitet zum Dashboard weiter, wenn der localStorage nicht leer ist.
-    if (localStorage.getItem("email") != null){
+    if (localStorage.getItem("token") != null){
         this._router.navigate(['dashboard']);
     }
   }
